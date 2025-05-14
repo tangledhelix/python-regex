@@ -41,14 +41,15 @@ jobs:
 
     strategy:
       matrix:
-        platform: [windows-latest]
+        platform: [windows-11-arm]
         #platform: [ubuntu-latest, macos-latest, windows-latest]
 
     env:
       # macOS archs
       #CIBW_ARCHS_MACOS: "x86_64 arm64 universal2"
       # Windows archs
-      CIBW_ARCHS_WINDOWS: "AMD64 x86 ARM64"
+      # TODO: is this needed if we specify platform windows-11-arm?
+      #CIBW_ARCHS_WINDOWS: "ARM64"
 
     steps:
       - uses: actions/checkout@v3
